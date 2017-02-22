@@ -1,0 +1,25 @@
+Youtube Link to Git playlist
+https://youtu.be/Ytux4IOAR_s?list=PLAwxTw4SYaPk8_-6IGxJtD3i2QAu5_s_p
+
+Udacity link to git and github tutorial
+https://www.udacity.com/course/ud775
+
+
+1) Windows Fc ( file compare)
+	FC old_file new_file
+2) Linux Diff 
+	diff -u old_file new_file
+	
+3) git commit -m " Commit Message"
+
+4) git diff --stat
+	shows which files changed in a commit.
+5) git clone
+	creates a local copy of the entire repo
+6) Lesson that details git configuration (windows) Linux in next chapter
+	Editor, Colors, auto-completion
+	https://classroom.udacity.com/courses/ud775/lessons/2980038599/concepts/33417185870923
+	
+7) git log 
+	history of the repo
+8) git diff <commit1> <commit2>
