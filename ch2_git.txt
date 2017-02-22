@@ -5,20 +5,39 @@ creates a repository with 0 commits in it.
 How is the staging area different from the working directory and the repository? What value do you think it offers?
 git add <file_name> = adds the file to staging area
 git reset <file_name> = removes file from staging area
-git reset <file_name> --hard = resets all the changes to previous commit. (cannot be undone)
+git reset <file_name> --hard = resets all the changes to previous commit state (directory and staging area changes are removed) ***cannot be undone***
 
 It gives the flexibility to commit only the necessary files and not keep history of some file if needed.
 
 How can you use the staging area to make sure you have one commit per logical
 change?
+git diff = git diff wihout arguments compare directory to staging area
+git diff --staged = differences between staging area and last commit
+git diff show = show difference between current commit and its parent commit (git log does not always show the paernt in order, it is time based)
+
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
+git branch = list the braches
+git branch <branch_name> = creates a new branch with the given name
+git checkout -b branch_name = creates a branch at the checked out commit.
+git branch -d <branch_name> = deletes the branch label(could make some commits unreachable if done in detached head state)
+It is useful in tring experimental features, a different feature version ets
 
 How do the diagrams help you visualize the branch structure?
+git log --graph <branch/commits ids ...> --oneline
+Shows the branch structure, idetify the parent of a commit.
 
-What is the result of merging two branches together? Why do we represent it in
-the diagram the way we do?
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+checkout one of the two branches that you want to merge and run
+git merge <other branch name that is to be merged>
+OR
+git merge branch1 branch2  ( either branch1 or branch2 must be checked out before merging/ otherwise thhree branches will be merged)
+The order of branch1 and branch2 does not matter. Which branch is checkedout matters.
+git merge --abort = Restore your files to their state before you started the merge
+Merging two commits create a merged commit. Merged commits have two parent commits (or three if merging three commits).
 
-What are the pros and cons of Git automatic merging vs. always doing merges
-manually?
+
+What are the pros and cons of Git automatic merging vs. always doing merges manually?
+Pros: can save time.
+Cons: Can introduce outdated updates! 
